@@ -61,6 +61,10 @@
     <section class="join" id="gabung"><div class="wrap join-inner"><div><h2>Mulai perjalanan<br>sepak bolamu.</h2><p>Tanyakan informasi pendaftaran dan jadwal kepada Manajemen SSB Metro United.</p></div><a class="button" href="mailto:ssbmetrounited@gmail.com?subject=Informasi%20Pendaftaran%20SSB%20Metro%20United">Minta informasi pendaftaran <span>↗</span></a></div></section>
   </main>
   <footer><div class="wrap footer-inner"><div class="footer-brand"><img src="Logo.png" alt="">SSB METRO UNITED FC</div><div class="footer-copy">Retro One Arena Blok B4 Metro Serpong<br>© 2026 SSB Metro United FC</div></div></footer>
-  <script src="script.js"></script>
+  <script
+    const menu=document.getElementById('menu');const links=document.getElementById('navlinks');
+    menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+  </script>
 </body>
 </html>
