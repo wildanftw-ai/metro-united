@@ -24,14 +24,21 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
     @media(max-width:800px){.wrap{width:min(var(--wrap),calc(100% - 36px))}.navlinks{display:none;position:absolute;left:18px;right:18px;top:68px;background:#121215;padding:22px;flex-direction:column;align-items:stretch;gap:20px;border:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero{padding-top:150px;min-height:auto}.hero-grid{grid-template-columns:1fr;gap:0}.hero-content{padding-bottom:0}.hero-copy{font-size:14px}.crest-wrap{height:330px}.crest{height:300px;width:270px}.halo{width:260px;height:260px}.orbit{right:10px;bottom:25px}.hero-meta{margin-top:32px}.scroll-mark{display:none}.section{padding:70px 0}.section-head{display:block}.section-intro{margin-top:18px}.cards{grid-template-columns:1fr}.card{min-height:180px}.card h3{margin-top:25px}.schedule{grid-template-columns:1fr;gap:32px}.fees{grid-template-columns:1fr}.join-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.footer-copy{text-align:left}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-ig{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#fff;border:1px solid var(--line);border-radius:3px;padding:13px 16px;font-weight:850;font-size:11px;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+    .nav-ig:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .nav-ig svg{flex:none}
+    .navlinks-ig{color:var(--gold)!important}
+    @media(max-width:800px){.nav-actions{display:none}.navlinks-ig{display:block}}
   </style>
 </head>
 <body>
   <div class="topline">SSB Metro United FC · SINCE 2025</div>
   <header><nav class="nav wrap" aria-label="Navigasi utama">
     <a class="brand" href="#home"><img src="Logo.png" alt=""><span>METRO UNITED FC<small>SEKOLAH SEPAK BOLA</small></span></a>
-    <div class="navlinks" id="navlinks"><a href="#tentang">Tentang</a><a href="#program">Pembinaan</a><a href="#jadwal">Jadwal</a><a href="#iuran">Informasi Iuran</a></div>
-    <a class="nav-cta" href="#gabung">Ayo Gabung Sekarang <span>↗</span></a>
+    <div class="navlinks" id="navlinks"><a href="#tentang">Tentang</a><a href="#program">Pembinaan</a><a href="#jadwal">Jadwal</a><a href="#iuran">Informasi Iuran</a><a class="navlinks-ig" href="https://www.instagram.com/ssbmetrounited" target="_blank" rel="noopener">Instagram ↗</a></div>
+    <div class="nav-actions"><a class="nav-cta" href="#gabung">Ayo Gabung Sekarang <span>↗</span></a><a class="nav-ig" href="https://www.instagram.com/ssbmetrounited" target="_blank" rel="noopener" aria-label="Instagram SSB Metro United FC"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg><span>Instagram</span></a></div>
     <button class="menu" id="menu" aria-label="Buka navigasi" aria-expanded="false">☰</button>
   </nav></header>
   <main>
@@ -54,10 +61,6 @@
     <section class="join" id="gabung"><div class="wrap join-inner"><div><h2>Mulai perjalanan<br>sepak bolamu.</h2><p>Tanyakan informasi pendaftaran dan jadwal kepada Manajemen SSB Metro United.</p></div><a class="button" href="mailto:ssbmetrounited@gmail.com?subject=Informasi%20Pendaftaran%20SSB%20Metro%20United">Minta informasi pendaftaran <span>↗</span></a></div></section>
   </main>
   <footer><div class="wrap footer-inner"><div class="footer-brand"><img src="Logo.png" alt="">SSB METRO UNITED FC</div><div class="footer-copy">Retro One Arena Blok B4 Metro Serpong<br>© 2026 SSB Metro United FC</div></div></footer>
-  <script>
-    const menu=document.getElementById('menu');const links=document.getElementById('navlinks');
-    menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
-    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
